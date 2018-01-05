@@ -13,6 +13,7 @@ const int CANVAS_WIDTH = 800;
 const int CANVAS_HEIGHT = 800;
 
 #include "ofMain.h"
+#include "timed_interpolation.hpp"
 
 class LineDrawer{
 public:
@@ -25,13 +26,15 @@ public:
 private:
     void updateVertsPos(float target_x, float target_y);
     
-    float phase, theta;
-    static constexpr float phaseSpeed = 0.02;
-    static constexpr float maxR = 0.07;
+    static constexpr float cycle = 1. * 1000.;   //msec
+    float currentPhase, theta;
+    static constexpr float maxR = 0.03;
     
     static const int NUM = 30;  //num of feature points
     ofVec2f verts[NUM + 2]; // + myPos + targetPos
     ofVbo vbo;
+    
+    TimedInterpolation interpolation;
 };
 
 
