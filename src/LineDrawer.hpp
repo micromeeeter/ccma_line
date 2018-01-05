@@ -9,9 +9,7 @@
 #ifndef LineDrawer_hpp
 #define LineDrawer_hpp
 
-const int CANVAS_WIDTH = 800;
-const int CANVAS_HEIGHT = 800;
-
+#include "ScreenManager.hpp"
 #include "ofMain.h"
 #include "timed_interpolation.hpp"
 

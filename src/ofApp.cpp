@@ -12,21 +12,40 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    agent.update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofBackground(255);
     
-    gui.draw();
+    screenBegin();
+    
+    agent.draw();
     
     line.lineTo(target_x, target_y);
+
+    
+
+    
+    screenEnd();
+    
+    
+    gui.draw();
+    
     
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    
+    switch (key) {
+        case 'f':
+            ofToggleFullscreen();
+            break;
+            
+        default:
+            break;
+    }
 }
 
 //--------------------------------------------------------------

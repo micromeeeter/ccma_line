@@ -17,7 +17,7 @@ LineDrawer::LineDrawer(){
     myPos_y = 0.5;
     
     for(int i = 0; i < NUM + 2; i++){
-        verts[i].set(0.5 * CANVAS_WIDTH, 0.5 * CANVAS_HEIGHT);
+        verts[i].set(0.5 * CANVAS_HEIGHT, 0.5 * CANVAS_HEIGHT);
     }
     
     vbo.setVertexData(verts, NUM + 2, GL_DYNAMIC_DRAW);
@@ -65,7 +65,7 @@ void LineDrawer::updateVertsPos(float target_x, float target_y){
             x = myPos_x + (target_x - myPos_x) * dist + r * cos(th);
             y = myPos_y + (target_y - myPos_y) * dist + r * sin(th);
         }
-        verts[i].set(x * CANVAS_WIDTH, y * CANVAS_HEIGHT);
+        verts[i].set(x * CANVAS_HEIGHT, y * CANVAS_HEIGHT);
     }
 }
 

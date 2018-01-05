@@ -3,6 +3,8 @@
 #include "ofMain.h"
 #include "ofxGui.h"
 #include "LineDrawer.hpp"
+#include "AgentMotion.hpp"
+
 
 class ofApp : public ofBaseApp{
 
@@ -27,5 +29,7 @@ class ofApp : public ofBaseApp{
     ofxFloatSlider target_x, target_y;
     
     LineDrawer line;
+    
+    AgentMotion agent;
 		
 };
