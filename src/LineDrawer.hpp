@@ -25,8 +25,8 @@ public:
 private:
     void updateVertsPos(float target_x, float target_y);
     
-    float theta;
-    
+    float phase, theta;
+    static constexpr float phaseSpeed = 0.02;
     static constexpr float maxR = 0.07;
     
     static const int NUM = 30;  //num of feature points
