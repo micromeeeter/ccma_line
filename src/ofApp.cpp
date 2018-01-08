@@ -5,14 +5,18 @@ void ofApp::setup(){
     ofSetWindowShape(CANVAS_WIDTH, CANVAS_HEIGHT);
     
     gui.setup();
-    gui.add(target_x.setup("target_x", 0.1, 0., 1.));
-    gui.add(target_y.setup("target_y", 0.3, 0., 1.));
+    gui.add(target_x.setup("target_x", 0.75, 0., 1.));
+    gui.add(target_y.setup("target_y", 0.5, 0., 1.));
+    
+    agent1.center.x = 0.25;
+    agent2.center.x = 0.75;
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    agent.update();
+    agent1.update();
+    agent2.update();
 }
 
 //--------------------------------------------------------------
@@ -21,7 +25,8 @@ void ofApp::draw(){
     
     screenBegin();
     
-    agent.draw();
+    agent1.draw();
+    agent2.draw();
     
     line.lineTo(target_x, target_y);
 
@@ -31,7 +36,7 @@ void ofApp::draw(){
     screenEnd();
     
     
-    gui.draw();
+    //gui.draw();
     
     
 }

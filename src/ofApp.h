@@ -30,6 +30,7 @@ class ofApp : public ofBaseApp{
     
     LineDrawer line;
     
-    AgentMotion agent;
+    AgentMotion agent1, agent2;
+    
 		
 };

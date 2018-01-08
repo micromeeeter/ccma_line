@@ -26,7 +26,7 @@ private:
     
     static constexpr float cycle = 1. * 1000.;   //msec
     float currentPhase, theta;
-    static constexpr float maxR = 0.03;
+    static constexpr float maxR = 0.015;
     
     static const int NUM = 30;  //num of feature points
     ofVec2f verts[NUM + 2]; // + myPos + targetPos

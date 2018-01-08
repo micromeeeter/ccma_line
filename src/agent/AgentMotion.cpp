@@ -45,8 +45,8 @@ void AgentMotion::resetShape() {
     center.x = 0.5;
     center.y = 0.5;
     
-    shape.node_count = NODE_MAX;
-    shape.edge_count = EDGE_MAX;
+    shape.node_count = int(NODE_MAX * frand());
+    shape.edge_count = int(EDGE_MAX * frand());
     
     for(int i = 0; i < shape.node_count; i++) {
         shape.nodes[i].x = frand() - 0.5;
@@ -54,15 +54,15 @@ void AgentMotion::resetShape() {
     }
     
     for (int i = 0; i <  shape.edge_count; i++) {
-        shape.edges[i].node_id_a = (i % NODE_MAX);
-        shape.edges[i].node_id_b = (irand() % NODE_MAX);
+        shape.edges[i].node_id_a = (i % shape.node_count);
+        shape.edges[i].node_id_b = (irand() % shape.node_count);
         while (shape.edges[i].node_id_a == shape.edges[i].node_id_b) {
-            shape.edges[i].node_id_b =  irand() % NODE_MAX;
+            shape.edges[i].node_id_b =  irand() % shape.node_count;
         }
     }
     
     pShape = &this->shape;
-    
+
 }
 
 void AgentMotion::initModulation() {
@@ -171,8 +171,6 @@ void AgentMotion::draw() {
     edgeVbo.drawElements(GL_LINES, pShape->edge_count);
     
 //    shader.end();
-    ofSetColor(0);
-    ofDrawCircle(0.5 * CANVAS_HEIGHT, 0.5 * CANVAS_HEIGHT, 2.0);
 }
 
 

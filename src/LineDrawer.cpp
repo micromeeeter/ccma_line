@@ -13,7 +13,7 @@ LineDrawer::LineDrawer(){
     interpolation.setDuration(cycle);
     interpolation.bang();
     
-    myPos_x = 0.5;
+    myPos_x = 0.25;
     myPos_y = 0.5;
     
     for(int i = 0; i < NUM + 2; i++){
